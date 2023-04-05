@@ -1,0 +1,44 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+
+
+<header>
+    <div class="conta">
+        <div class="header-left">
+            <a href="/" class="logo">新人歌い手紹介所</a>
+        </div>
+        <div class="header-right">
+            <div class="tags">
+                <a href="#" class="login">新着順</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">カテゴリ別</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">歌い手</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">曲</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        </div>
+    </div>
+    <!-- <h1>Hello, world!</h1> -->
+</header>
+<div class="open-page">
+    <h2>投稿一覧</h2>
+    {% for obj in articles %}
+    <div class="tweet-contents">
+        <a href="/blog/{{ obj.id }}/">
+            <p class="tweet text">{{ obj.text }}</p>
+            <p class="tweet name">{{ obj.name }}</p>
+            <p class="tweet screen_name">{{ obj.screen_name }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

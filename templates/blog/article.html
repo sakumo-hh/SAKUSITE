@@ -1,0 +1,67 @@
+{% extends 'mysite/base.html' %}
+
+
+{% block content %}
+
+<!-- <div class="dropdown">
+    <button class="dropdown__btn" id="dropdown__btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="64"/><circle cx="256" cy="448" r="64"/><circle cx="256" cy="64" r="64"/></svg>
+    </button>
+    <div class="dropdown__body">
+      <ul class="dropdown__list">
+        <li class="dropdown__item"><a href="https://www.google.com/" class="dropdown__item-link">Google</a></li>
+        <li class="dropdown__item"><a href="https://www.yahoo.co.jp/" class="dropdown__item-link">Yahoo! JAPAN</a></li>
+        <li class="dropdown__item"><a href="https://www.bing.com/" class="dropdown__item-link">Bing</a></li>
+      </ul>
+    </div>
+</div> -->
+
+<header>
+    <div class="contain">
+        <div class="header-left">
+            <a href="/" class="logo">新人歌い手紹介所</a>
+        </div>
+        <div class="header-right">
+            <div class="tags">
+                <a href="#" class="login">新着順</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">カテゴリ別</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">歌い手</a>
+            </div>
+            <div class="tags">
+                <a href="#" class="login">曲</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        </div>
+    </div>
+</header>
+<div class="article-page">
+    <div class="contain">
+        <div class="heading">
+            <div class="date">
+                <p class="added-date">投稿日{{ article.created_at }}</p>
+            </div>
+            <div class="title">
+                <div class="title-text">
+                    <h1>{{ article.text }}&ensp;歌ってみた</h1>
+                </div>
+            </div>
+            <div class="song-data">
+                <p class="singer">歌い手&ensp;<a href="#" class="">{{ article.name }}</a></p>
+                <a class="channel-btn" href="{{ article.url }}">Youtubeチャンネル</a>
+            </div>
+        </div>
+        <div class="tweet-page">
+            {% autoescape off %} 
+            {{ article.html }}
+            {% endautoescape %}
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
